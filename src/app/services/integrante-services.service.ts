@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,14 +9,16 @@ import { Observable } from 'rxjs';
 export class IntegranteServicesService {
 //test
 
-  private port='8000';
-  private host= '127.0.0.1';
-  private url='http://'+this.host+':'+this.port+'/integrantes';
+  
+  private host= environment.host;
+  private api_integrantes="/integrantes";
+  private url=this.host+this.api_integrantes;
   //private url=this.host_server+"/"+this.api_server;
 
   constructor(private http:HttpClient) { }
 
   getIntegrantes():Observable<any>{
+    console.log("api");
     return this.http.get(this.url)
   }
 
