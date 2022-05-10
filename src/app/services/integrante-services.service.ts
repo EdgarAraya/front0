@@ -13,7 +13,6 @@ export class IntegranteServicesService {
   private host= environment.host;
   private api_integrantes="/integrantes";
   private url=this.host+this.api_integrantes;
-  //private url=this.host_server+"/"+this.api_server;
 
   constructor(private http:HttpClient) { }
 
@@ -26,3 +25,4 @@ export class IntegranteServicesService {
 
   
 }
+
